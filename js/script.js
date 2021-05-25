@@ -1,34 +1,29 @@
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-one').addEventListener('click', function() {
-        console.log('#btn-two')
         document.querySelector('#testscroll').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-two').addEventListener('click', function() {
-        console.log('#btn-two')
         document.querySelector('#testscroll1').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-three').addEventListener('click', function() {
-        console.log('#btn-two')
         document.querySelector('#testscroll2').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-four').addEventListener('click', function() {
-        console.log('#btn-two')
         document.querySelector('#testscroll3').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-five').addEventListener('click', function() {
-        console.log('#btn-two')
         document.querySelector('#testscroll4').classList.toggle('tab-content-active')
     })
 });
@@ -89,8 +84,8 @@ var swiper1 = new Swiper('.swiper-container1', {
     spaceBetween: 52,
     slidesPerGroup: 1,
     breakpoints: { 321: { slidesPerColumn: 2, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 34 },
-                    1025: { slidesPerColumn: 2, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 52 },
-                    1921: { slidesPerColumn: 2, slidesPerView: 4, slidesPerGroup: 4}
+                    1025: { slidesPerColumn: 2, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 48 },
+                    1921: { slidesPerColumn: 2, slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 50}
                     },
     slidesPerColumnFill: 'row',
     pagination: {
@@ -110,6 +105,87 @@ $( function() {
         collapsible: true
     });
 });
+
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#french').addEventListener('click', function() {
+
+        document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
+            tabContent.classList.remove('language-active')
+        })
+
+        document.querySelector('#french').classList.add('language-active')
+    })
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#german').addEventListener('click', function() {
+        
+        document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
+            tabContent.classList.remove('language-active')
+        })
+
+        document.querySelector('#german').classList.add('language-active')
+    })
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#italy').addEventListener('click', function() {
+        
+        document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
+            tabContent.classList.remove('language-active')
+        })
+
+        document.querySelector('#italy').classList.add('language-active')
+    })
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#russian').addEventListener('click', function() {
+        
+        document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
+            tabContent.classList.remove('language-active')
+        })
+
+        document.querySelector('#russian').classList.add('language-active')
+    })
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#belgium').addEventListener('click', function() {
+        
+        document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
+            tabContent.classList.remove('language-active')
+        })
+
+        document.querySelector('#belgium').classList.add('language-active')
+    })
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.language-selection__btn').forEach(function(tabsBtn) {
+        tabsBtn.addEventListener('click',function(event) {
+            const path = event.currentTarget.dataset.path
+
+            document.querySelectorAll('.catalog__bottom-container').forEach(function(tabContent) {
+                tabContent.classList.remove('language-select')
+            })
+            document.querySelector(`[data-target="${path}"]`).classList.add('language-select')
+        })
+    })
+});
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     document.querySelectorAll('.language-selection__btn').forEach(function(tabsBtn) {
+//         tabsBtn.addEventListener('click',function(event) {
+//             const path = event.currentTarget.dataset.path
+
+//             document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
+//                 tabContent.classList.remove('language-active')
+//             })
+//             document.querySelector(`[data-target="${path}"]`).classList.add('language-active')
+//         })
+//     })
+// });
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.tab__link').forEach(function(tabsBtn) {
@@ -146,7 +222,7 @@ var swiper2 = new Swiper('.swiper-container2', {
     slidesPerColumnFill: 'row',
     breakpoints: { 321: { spaceBetween: 35, slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2 },
                     769: { spaceBetween: 51 },
-                    1025: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 47, },
+                    1025: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 46, },
                     
                     },
     pagination: {
