@@ -37,6 +37,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 html {
     font-family: 'Open Sans', sans-serif;
     color: #333333;
@@ -44,7 +45,6 @@ html {
 
 body {
     margin: 0;
-    max-width: 1920px;
 }
 
 a {
@@ -62,9 +62,17 @@ ul {
     display: block;
     clear: both;    
 }
+/* 
+.container__limiter {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+} */
 
 .centering-container {
-    width: 84%;
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 155px;
     margin: 0 auto;
 }
 
@@ -84,10 +92,14 @@ ul {
 }
 
 .header__top {
+    /* padding: 1.5% 8.35%; */
+    background-color: #000000;
+}
+
+.header__content-top {
     display: flex;
     justify-content: space-between;
-    padding: 1.5% 8.35%;
-    background-color: #000000;
+    padding: 30px .29% 27px .25%;
 }
 
 .header__burger {
@@ -112,11 +124,11 @@ ul {
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
-    line-height: 26px;
+    line-height: 24px;
 }
 
 .header__list {
-    width: 71.7%;
+    width: 71.8%;
     display: flex;
     justify-content: space-between;
 }
@@ -144,7 +156,7 @@ ul {
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
-    line-height: 41px;
+    line-height: 40px;
     cursor: pointer;
 }
 
@@ -166,10 +178,16 @@ ul {
 }
 
 .header__bottom {
+    /* display: flex;
+    justify-content: space-between;
+    padding: 1.2% 8.25% 1.15% 8.25%; */
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header__content-bottom {
     display: flex;
     justify-content: space-between;
-    padding: 1.2% 8.25% 1.15% 8.25%;
-    background-color: rgba(0, 0, 0, 0.4);
+    padding: 22px .2%;
 }
 
 .header__nav-select {
@@ -334,7 +352,7 @@ ul {
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 23px;
+    line-height: 25px;
     cursor: pointer;
 }
 
@@ -426,8 +444,8 @@ ul {
 .search__icon {
     display: inline-block;
     vertical-align: bottom;
-    height: 25px;
-    width: 25px;
+    height: 27px;
+    width: 27px;
     background-color: rgba(0, 0, 0 ,0);
     background-position: center 100%;
     border: none;
@@ -496,7 +514,7 @@ button, input, optgroup, select, textarea {
 }
 
 .hero__inscription {
-    padding: 4.3% 0 7.5% .1%;
+    padding: 4.38% 0 7.5% 0;
 }
 
 .hero__heading {
@@ -504,7 +522,7 @@ button, input, optgroup, select, textarea {
     z-index: 1;
     width: 35%;
     margin: 0;
-    margin-bottom: 1.2%;
+    margin-bottom: 1.15%;
     color: #ffffff;
     font-style: normal;
     font-weight: bold;
@@ -515,9 +533,9 @@ button, input, optgroup, select, textarea {
 .hero__text {
     position: relative;
     z-index: 1;
-    width: 35%;
+    width: 36%;
     padding-left: .3%;
-    margin-bottom: 5.8%;
+    margin-bottom: 5.7%;
     color: #ffffff;
     font-style: normal;
     font-weight: bold;
@@ -530,7 +548,7 @@ button, input, optgroup, select, textarea {
     z-index: 1;
     display: inline-block;
     margin-left: .3%;
-    padding: 1.25% 2.16% 1.3% 2.16%;
+    padding: 1.3% 2.16% 1.35% 2.18%;
     border-radius: 100px;
     outline: none;
     background-color: #9D5CD0;;
@@ -578,14 +596,14 @@ button, input, optgroup, select, textarea {
 }
 
 .about__container {
-    padding-top: 4.6%;
-    padding-left: .2%;
-    padding-bottom: 3.65%;
+    padding-top: 5.6%;
+    padding-left: .1%;
+    padding-bottom: 4.35%;
 }
 
 .about__heading {
     /* margin-left: .2%; */
-    margin-bottom: 1.4%;
+    margin-bottom: 1.3%;
 }
 
 .about__text {
@@ -613,7 +631,7 @@ button, input, optgroup, select, textarea {
 
 .gallery__container {
     position: relative;
-    padding-top: 4.55%;
+    padding-top: 4.5%;
     padding-bottom: 3.6%;
     display: flex;
 }
@@ -624,7 +642,7 @@ button, input, optgroup, select, textarea {
     flex-direction: column;
     /* height: 838px; */
     width: 26.4%;
-    padding-left: 0.2%;
+    padding-left: 0.15%;
     /* margin-left: .2%; */
 }
 
@@ -643,7 +661,7 @@ button, input, optgroup, select, textarea {
 }
 
 .choices {
-    width: 96.4%;
+    width: 96.3%;
     /* margin-left: 3px; */
 }
 
@@ -669,7 +687,8 @@ button, input, optgroup, select, textarea {
 .choices__list--single {
     display: inline-block;
     padding-top: 2px;
-    padding-left: 7px;
+    padding-left: 6px;
+    padding-right: 30px;
 }
 
 .choices__placeholder {
@@ -776,8 +795,8 @@ button, input, optgroup, select, textarea {
 
 .gallery__right {
     position: relative;
-    width: 73.5%;
-    padding-bottom: .35%;
+    width: 73.3%;
+    padding-bottom: .4%;
     /* margin-left: 2.05%; */
     /* padding-top: 50px; */
 }
@@ -785,9 +804,9 @@ button, input, optgroup, select, textarea {
 .swiper-container1 {
     visibility: hidden;
     /* position: absolute; */
-    width: 99.6%;
+    width: 100%;
     padding-top: 78px;
-    padding-left: 2.5%;
+    padding-left: 2.4%;
     /* margin-left: auto;
     margin-right: auto; */
     overflow: hidden;
@@ -826,12 +845,12 @@ button, input, optgroup, select, textarea {
 
 .swiper-container1 > .swiper-pagination-fraction {
     top: 3%;
-    left: 7%;
+    left: 6.9%;
     color: #ffffff;
 }
 
 .swiper-container1 > .swiper-button-prev {
-    left: 34px;
+    left: 2.8%;
 }
 
 .swiper-button-next:after, .swiper-button-prev:after {
@@ -942,14 +961,14 @@ button, input, optgroup, select, textarea {
 /* Catalog */
 
 .catalog__container {
-    padding-top: 4.65%;
-    padding-left: .2%;
+    padding-top: 5.48%;
+    padding-left: .1%;
 }
 
 .catalog__top {
     display: flex;
     justify-content: space-between;
-    width: 40.7%;
+    width: 40.75%;
     margin-bottom: 1.35%;
 }
 
@@ -961,7 +980,7 @@ button, input, optgroup, select, textarea {
 .catalog__language-selection {
     display: flex;
     justify-content: space-between;
-    width: 65.7%;
+    width: 65.6%;
     padding-top: .7%;
 }
 
@@ -1040,7 +1059,7 @@ button, input, optgroup, select, textarea {
     width: 67%;
     padding-left: .1%;
     padding-left: .15%;
-    margin-bottom: 2.45%;
+    margin-bottom: 2.44%;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -1050,7 +1069,7 @@ button, input, optgroup, select, textarea {
 .catalog__bottom-container {
     display: none;
     justify-content: space-between;
-    padding-left: .15%;
+    padding-left: .2%;
 }
 
 .language-select {
@@ -1154,7 +1173,6 @@ button, input, optgroup, select, textarea {
     position: relative;
     height: 50px;
     width: 50px;
-    margin-right: 2px;
     border-radius: 50%;
     border: none;
     background-color: #CACACA;
@@ -1250,7 +1268,7 @@ a.ui-button:active,
 
 .events__container {
     position: relative;
-    padding: 4.58% .1% 4.16% .2%;
+    padding: 5.45% .1% 4.95% 0.15%;
     /* padding-top: 4.65%;
     padding-left: .2%;
     padding-bottom: 4.15%; */
@@ -1314,16 +1332,16 @@ a.ui-button:active,
 .card__heading {
     /* margin-top: .8%;
     margin-left: 10%; */
-    padding: 1.15% 8% 3px 9.8%;
+    padding: 1.55% 8% 3px 9.8%;
     margin-bottom: 0;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    line-height: 33px;
+    line-height: 32px;
 }
 
 .card__text {
-    padding: 0 10% 30.5% 10%;
+    padding: 0 10% 30.8% 10%;
     /* margin-top: .6%;
     margin-left: 10%; */
     font-size: 16px;
@@ -1332,7 +1350,7 @@ a.ui-button:active,
 
 .card__link {
     position: absolute;
-    bottom: 5.9%;
+    bottom: 6%;
     left: 10%;
     padding-bottom: 5px;
     color: #9D5CD0;
@@ -1357,7 +1375,7 @@ a.ui-button:active,
 
 .events__btn {
     position: relative;
-    left: 44.1%;
+    left: 44.2%;
     bottom: 0;
     padding: .97% 2.05%;
     background-color: rgba(0, 0, 0 ,0);
@@ -1420,18 +1438,18 @@ a.ui-button:active,
     display: flex;
     justify-content: space-between;
     padding-top: 4.5%;
-    padding-bottom: 3.44%;
+    padding-bottom: 3.3%;
 }
 
 .editions__side-bar {
     width: 17.6%;
-    padding-left: .15%;
+    padding-left: .05%;
 
 }
 
 .editions__heading {
     /* margin-left: .5%; */
-    margin-bottom: 8%;
+    margin-bottom: 7.68%;
     color: #ffffff;
 }
 
@@ -1549,8 +1567,7 @@ label > span:active {
 }
 
 .number {
-    margin: 0 2.55%;
-    padding: 0 .7% 0 3.9%;
+    padding: 0 3.8% 0 4%;
     border: none;
     color: #ffffff;
     background-color: rgba(157, 92, 208, 0.5);;
@@ -1565,7 +1582,7 @@ details {
 }
 
 .editions__hero {
-    width: 72.05%;
+    width: 71.8%;
     margin-left: 0;
 }
 
@@ -1575,7 +1592,6 @@ details {
     width: 99.6%;
     /* height: 630px; */
     padding-top: 87px;
-    padding-left: 5px;
     /* margin-top: 1.8%; */
     /* margin-left: auto;
     margin-right: auto; */
@@ -1608,8 +1624,8 @@ details {
 }
 
 .swiper-container2>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-    top: 5.2%;
-    left: 55px;
+    top: 5.4%;
+    left: 49px;
     /* left: 4.7%; */
     color: #ffffff;
 }
@@ -1621,11 +1637,11 @@ details {
 
 .swiper-container2>.swiper-button-next {
     /* left: 9.2%; */
-    left: 105px;
+    left: 101px;
 }
 
 .swiper-container2>.swiper-button-prev {
-    left: 6px;
+    left: 1px;
 }
 
 .slide-hidden {
@@ -1657,7 +1673,7 @@ details {
 
 .card__book-writer {
     display: block;
-    margin-bottom: 11.2%;
+    margin-bottom: 12.5%;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1724,7 +1740,7 @@ details {
 /* Projects */
 
 .projects__container {
-    padding: 4.55% .1% 2% .1%;
+    padding: 5.5% .1% 2.4% .04%;
 }
 
 .projects__heading {
@@ -1734,7 +1750,7 @@ details {
 
 .projects__text {
     width: 66%;
-    padding-left: .2%;
+    padding-left: .15%;
     margin-bottom: 24px;
     /* margin-top: 1.4%;
     margin-left: .35%; */
@@ -1934,11 +1950,11 @@ details {
 }
 
 .swiper-container3 > .swiper-button-prev {
-    left: .35%;
+    left: .2%;
 }
 
 .swiper-container3 > .swiper-button-next {
-    right: .35%;
+    right: .2%;
 }
 
 
@@ -1956,6 +1972,9 @@ details {
 /* Contacts */ 
 
 .contacts__container {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     padding-top: 1.15%;
 }
 
@@ -2129,9 +2148,9 @@ details {
 .footer__container {
     display: flex;
     justify-content: space-between;
-    padding-top: 2.45%;
-    padding-left: 0.35%;
-    padding-bottom: 2.3%;
+    padding-top: 2.9%;
+    padding-left: 0.3%;
+    padding-bottom: 2.75%;
 }
 
 .footer__logo {
@@ -2191,7 +2210,7 @@ details {
     justify-content: space-between;
     width: 10.8%;
     min-width: 160px;
-    margin-right: .4%;
+    margin-right: .34%;
 }
 
 
