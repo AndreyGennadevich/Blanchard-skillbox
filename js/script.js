@@ -84,7 +84,7 @@ var swiper1 = new Swiper('.swiper-container1', {
     spaceBetween: 52,
     slidesPerGroup: 1,
     breakpoints: { 321: { slidesPerColumn: 2, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 34 },
-                    1025: { slidesPerColumn: 2, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 48 },
+                    1025: { slidesPerColumn: 2, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50 },
                     },
     slidesPerColumnFill: 'row',
     pagination: {
@@ -221,7 +221,7 @@ var swiper2 = new Swiper('.swiper-container2', {
     slidesPerColumnFill: 'row',
     breakpoints: { 321: { spaceBetween: 35, slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2 },
                     769: { spaceBetween: 51 },
-                    1025: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 47},
+                    1025: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50},
                     
                     },
     pagination: {
