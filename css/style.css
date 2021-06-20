@@ -34,7 +34,6 @@
 }
 
 * {
-    margin: 0;
     box-sizing: border-box;
 }
 
@@ -60,20 +59,14 @@ ul {
 .clearfix:after {
     content: "";
     display: block;
-    clear: both;    
-}
-
-.container__limiter {
-    padding: 0 50px;
-    margin: 0 auto;
+    clear: both;
 }
 
 .centering-container {
-    max-width: 1600px;
+    max-width: 1700px;
     width: 100%;
     margin: 0 auto;
-    /* padding-left: 2px;
-    padding-right: 2px; */
+    padding: 0 50px;
 }
 
 .heading {
@@ -92,7 +85,6 @@ ul {
 }
 
 .header__top {
-    /* padding: 1.5% 8.35%; */
     background-color: #000000;
 }
 
@@ -110,21 +102,24 @@ ul {
     display: none;
 }
 
-.header__logo:focus,
+.header__logo:focus {
+    outline: 2px solid #7943A4;
+}
+
 .header__link:focus,
 .header__btn-enter:focus,
 .nav-select__btn:focus  {
-    outline: 2px solid #7943A4;
+    background-color: #9D5CD0;
+    outline: none;
 }
 
 .header__nav {
     display: flex;
     justify-content: space-between;
     width: 78%;
+    padding: 8px 0;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 25px;
 }
 
 .header__list {
@@ -133,10 +128,18 @@ ul {
     justify-content: space-between;
 }
 
+.header__item:not(:last-child) {
+    margin-right: 20px;
+}
+
 .header__link {
     vertical-align: middle;
-    vertical-align: -webkit-baseline-middle;
     color: #ffffff;
+    font-size: 18px;
+    line-height: 18px;
+    -moz-transition: color 0.8s 0.1s ease;
+    -o-transition: color 0.8s 0.1s ease;
+    -webkit-transition: color 0.8s 0.1s ease;
 }
 
 .header__link:hover,
@@ -156,8 +159,11 @@ ul {
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
-    line-height: 40px;
+    line-height: 23px;
     cursor: pointer;
+    -moz-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -webkit-transition: color 0.2s ease;
 }
 
 .header__btn-enter:active {
@@ -178,9 +184,6 @@ ul {
 }
 
 .header__bottom {
-    /* display: flex;
-    justify-content: space-between;
-    padding: 1.2% 8.25% 1.15% 8.25%; */
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -209,6 +212,7 @@ ul {
     left: 2px;
     height: 299px;
     width: 300px;
+    padding: 40px;
     background: rgba(0, 0, 0, 0.6);
     transition: transform .3s ease-in-out;
     -webkit-transition: transform .3s ease-in-out;
@@ -221,8 +225,7 @@ ul {
 }
 
 .simplebar-content-wrapper {
-    max-height: 76%;
-    margin: 40px;   
+    overflow: auto;
 }
 
 .simplebar-track.simplebar-vertical {
@@ -252,6 +255,14 @@ ul {
     line-height: 22px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    top: 20px;
+    bottom: 20px;
 }
 
 #testscroll1 {
@@ -354,6 +365,9 @@ ul {
     font-size: 18px;
     line-height: 25px;
     cursor: pointer;
+    -moz-transition: color 0.8s 0.1s ease;
+    -o-transition: color 0.8s 0.1s ease;
+    -webkit-transition: color 0.8s 0.1s ease;
 }
 
 .nav-select__btn:after {
@@ -368,6 +382,14 @@ ul {
     border-top-style: none;
     border-right-style: none;
     transform: rotate(-45deg);
+    -moz-transition: all 0.8s 0.1s ease;
+    -o-transition: all 0.8s 0.1s ease;
+    -webkit-transition: all 0.8s 0.1s ease;
+}
+
+.btn-content-active::after {
+    top: 50%;
+    transform: rotate(135deg);
 }
 
 .nav-select__btn:hover,
@@ -382,9 +404,9 @@ ul {
     border-color: #7943A4;
 }
 
-.nav-select__link {
+.nav-select__link:not(:first-child) {
     display: inline-block;
-    margin-bottom: 9.3%;
+    margin-top: 9.3%;
 }
 
 .nav-selection-bg:hover {
@@ -397,15 +419,14 @@ ul {
     position: absolute;
     top: 0;
     left: 0;
-    /* width: 100%;
-    height: 100%; */
+    right: 0;
+    bottom: 0;
     background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
     visibility: hidden;
 }
 
 .nav-selection-bg:active {
     box-shadow:0px 0px 0px 2px #D1A9F0 inset;
-    /* border: 2px solid #D1A9F0; */
 }
 
 .nav-selection-bg:active:before  {
@@ -448,7 +469,7 @@ ul {
     background-color: rgba(0, 0, 0 ,0);
     background-position: center 100%;
     border: none;
-    background-image: url(../image/1920/Search\ icon.svg);
+    background-image: url(../image/1920/Searchicon.svg);
     background-repeat: no-repeat;
     cursor: pointer;
 }
@@ -468,10 +489,6 @@ button, input, optgroup, select, textarea {
 .search__input:focus {
     outline: 2px solid #7943A4;
     outline-offset: 4px;
-}
-
-.header__search:hover .search__icon{
-    background-image: url(../image/1920/Search\ icon2.svg);
 }
 
 .header__search:hover .search__input {
@@ -498,7 +515,7 @@ button, input, optgroup, select, textarea {
 }
 
 @keyframes breath {
-    from { 
+    from {
         transform: scale(1);
     }
     to {
@@ -514,7 +531,6 @@ button, input, optgroup, select, textarea {
 
 .hero__inscription {
     padding: 70px 0 119px 0;
-    /* padding: 4.38% 0 7.5% 0; */
 }
 
 .hero__heading {
@@ -534,6 +550,7 @@ button, input, optgroup, select, textarea {
     position: relative;
     z-index: 1;
     width: 36%;
+    margin-top: 0;
     margin-bottom: 90px;
     color: #ffffff;
     font-style: normal;
@@ -555,12 +572,18 @@ button, input, optgroup, select, textarea {
     font-weight: bold;
     font-size: 18px;
     line-height: 27px;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .hero__btn::before {
     content: '';
     position: absolute;
     border-radius: 100px;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
 }
 
 .hero__btn:focus:before {
@@ -585,13 +608,7 @@ button, input, optgroup, select, textarea {
     background-color: #7943A4;
 }
 
-
 /* About */
-
-.section-about {
-    /* margin-top: 11%; */
-    /* padding-bottom: 2.9%; */
-}
 
 .about__container {
     padding-top: 89px;
@@ -599,12 +616,13 @@ button, input, optgroup, select, textarea {
 }
 
 .about__heading {
-    /* margin-left: .2%; */
     margin-bottom: 22px;
 }
 
 .about__text {
     width: 67.8%;
+    margin-top: 0;
+    margin-bottom: 0;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -620,7 +638,6 @@ button, input, optgroup, select, textarea {
 }
 
 .gallery__heading {
-    /* margin-top: 9.4%; */
     margin-bottom: 25px;
     color: #ffffff;
 }
@@ -638,13 +655,11 @@ button, input, optgroup, select, textarea {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    /* height: 838px; */
     width: 26.2%;
-    /* margin-left: .2%; */
 }
 
 .filter__heading {
-    /* margin-left: 0.7%; */
+    margin-top: 0;
     margin-bottom: 2.8%;
     color: #ffffff;
     font-style: normal;
@@ -655,7 +670,6 @@ button, input, optgroup, select, textarea {
 
 .choices {
     width: 96.3%;
-    /* margin-left: 3px; */
 }
 
 .choices__inner {
@@ -750,7 +764,7 @@ button, input, optgroup, select, textarea {
 .choices__list--dropdown .choices__item {
     padding: 8px 0 12px 19px;
     font-size: 16px;
-} 
+}
 
 .is-highlighted {
     background-color: rgba(255, 255, 255 ,.2) !important;
@@ -758,9 +772,7 @@ button, input, optgroup, select, textarea {
 
 .gallery__text {
     width: 82%;
-    /* margin-top: 132%;
-    margin-left: 2px; */
-    /* margin-bottom: 69.5px; */
+    margin: 0;
     color: #ffffff;
     font-style: normal;
     font-weight: 600;
@@ -774,8 +786,9 @@ button, input, optgroup, select, textarea {
 
 .gallery__link-enter:focus,
 .projects__link:focus {
-    outline: 2px solid #7943A4;
-    outline-offset: 3px;
+    color: #ffffff;
+    background-color: #9D5CD0;
+    outline: none;
 }
 
 .gallery__link-enter:hover,
@@ -793,24 +806,15 @@ button, input, optgroup, select, textarea {
     position: relative;
     width: 73.5%;
     padding-bottom: .3%;
-    /* margin-left: 2.05%; */
-    /* padding-top: 50px; */
 }
 
 .swiper-container1 {
     visibility: hidden;
-    /* position: absolute; */
     width: 100%;
     padding-top: 78px;
     padding-left: 2.3%;
-    /* margin-left: auto;
-    margin-right: auto; */
     overflow: hidden;
 }
-
-/* .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
-    opacity: 1;
-} */
 
 .swiper-is-active {
     visibility: visible;
@@ -860,6 +864,13 @@ button, input, optgroup, select, textarea {
 
 .swiper-button-next,
 .swiper-button-prev {
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -895,11 +906,6 @@ button, input, optgroup, select, textarea {
     border: 2px solid #000000;
 }
 
-/* .swiper-button-next:active:before,
-.swiper-button-prev:active:before {
-    
-} */
-
 .swiper-pagination {
     text-align: start;
 }
@@ -924,11 +930,14 @@ button, input, optgroup, select, textarea {
     left: 7.3%;
     bottom: 9.3%;
     right: 7.3%;
-    background-image: url(../image/1920/Group\ 12.svg);
+    background-image: url(../image/1920/Group12.svg);
     background-repeat: no-repeat;
     background-position: 50.5% 46.5%;
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 0;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .paint__link::after {
@@ -987,7 +996,11 @@ button, input, optgroup, select, textarea {
     border-radius: 50%;
     border: none;
     background-size: 100% 100%;
+    background-repeat: no-repeat;
     cursor: pointer;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .language-active::after {
@@ -1053,6 +1066,7 @@ button, input, optgroup, select, textarea {
 
 .catalog__text {
     width: 68%;
+    margin-top: 0;
     margin-bottom: 39px;
     font-style: normal;
     font-weight: normal;
@@ -1084,6 +1098,7 @@ button, input, optgroup, select, textarea {
 }
 
 .catalog__subtitle {
+    margin: 0;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -1091,6 +1106,7 @@ button, input, optgroup, select, textarea {
 }
 
 .catalog__period-life {
+    margin-top: 0;
     margin-bottom: 8px;
     font-size: 12px;
     color: #999999;
@@ -1098,6 +1114,7 @@ button, input, optgroup, select, textarea {
 
 .catalog__biography {
     width: 99%;
+    margin: 0;
     font-size: 16px;
     line-height: 32px;
 }
@@ -1115,6 +1132,9 @@ button, input, optgroup, select, textarea {
     border-radius: 0;
     border-top: 1px solid #CACACA;
     background-color: #ffffff;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .ui-accordion-header:nth-child(13) {
@@ -1154,6 +1174,7 @@ button, input, optgroup, select, textarea {
 }
 
 .tab__name{
+    margin: 0;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -1167,6 +1188,9 @@ button, input, optgroup, select, textarea {
     border-radius: 50%;
     border: none;
     background-color: #CACACA;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .tab__btn::before {
@@ -1211,8 +1235,9 @@ button, input, optgroup, select, textarea {
 }
 
 .tab__link:focus {
-    outline: 2px solid #7943A4;
-    outline-offset: 2px;
+    color: #ffffff;
+    background-color: #9D5CD0;
+    outline: none;
 }
 
 .tab__link:hover {
@@ -1224,6 +1249,7 @@ button, input, optgroup, select, textarea {
 
 .tab__link:active {
     color: #7943A4;
+    border: none;
     font-weight: 600;
 }
 
@@ -1251,25 +1277,93 @@ a.ui-button:active,
     border: none;
 }
 
+.tab__main {
+    display: flex;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-bottom: 21px;
+}
+
+.tab__img {
+    display: block;
+    height: 165px;
+    width: 251px;
+    background-color: #B7B7B7;
+    outline: 2px solid #B7B7B7;
+    outline-offset: 10px;
+}
+
+.tab__right {
+    padding-top: 29px;
+    padding-left: 36px;
+}
+
+.tab__main-heading {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.tab__main-text {
+    padding-right: 44%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.tab__main-link {
+    color: #9D5CD0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.catalog__photo-empty {
+    padding: 14.2% 34%;
+    text-align: center;
+    background: #ECECEC;
+}
+
+.catalog__photo-text {
+    display: block;
+    color: #666666;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.catalog__subtitle-empty {
+    margin: 0;
+    padding-top: 30px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.catalog__biography-empty {
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.catalog__link {
+    color: #9D5CD0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
 /* Events */
 
 .events__container {
     position: relative;
     padding: 88px 0 4.95% 0;
-    /* padding-top: 4.65%;
-    padding-left: .2%;
-    padding-bottom: 4.15%; */
 }
 
 .events__heading {
-    /* margin-top: 2.5%;
-    margin-left: .3%; */
     margin-bottom: 21px;
-}
-
-.events__wrapper {
-    /* flex-wrap: wrap; */
-    /* margin: 0 .45%; */
 }
 
 .events__top {
@@ -1281,7 +1375,6 @@ a.ui-button:active,
     position: relative;
     overflow: hidden;
     width: 31.4%;
-    /* height: 700px; */
     margin-bottom: 50px;
     border: 1px solid #CACACA;
 }
@@ -1305,6 +1398,7 @@ a.ui-button:active,
 }
 
 .card__sign {
+    margin-top: 0;
     margin-right: 22px;
     margin-bottom: 0;
     font-style: normal;
@@ -1316,10 +1410,8 @@ a.ui-button:active,
 }
 
 .card__heading {
-    /* margin-top: .8%;
-    margin-left: 10%; */
     padding: 7px 45px 2px 49px;
-    margin-bottom: 0;
+    margin: 0;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -1328,8 +1420,7 @@ a.ui-button:active,
 
 .card__text {
     padding: 0 9.8% 30.2% 9.8%;
-    /* margin-top: .6%;
-    margin-left: 10%; */
+    margin: 0;
     font-size: 16px;
     line-height: 32px;
 }
@@ -1342,11 +1433,14 @@ a.ui-button:active,
     color: #9D5CD0;
     border-bottom: 1px solid #9D5CD0;
     cursor: pointer;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
 }
 
 .card__link:focus {
     outline: 2px solid #7943A4;
-    outline-offset: 5px;    
+    outline-offset: 5px;
 }
 
 .card__link:hover {
@@ -1374,6 +1468,9 @@ a.ui-button:active,
     line-height: 25px;
     cursor: pointer;
     outline: none;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .events__btn::before {
@@ -1432,20 +1529,17 @@ a.ui-button:active,
 }
 
 .editions__heading {
-    /* margin-left: .5%; */
     margin-bottom: 23px;
     color: #ffffff;
 }
 
 .editions__nav {
     margin-bottom: 33px;
-    /* margin-top: 4.8%; */
 }
 
 .nav__header {
+    margin-top: 0;
     margin-bottom: 8px;
-    /* margin-top: 0;
-    margin-left: 1.4%; */
     color: #ffffff;
     font-style: normal;
     font-weight: bold;
@@ -1455,9 +1549,6 @@ a.ui-button:active,
 
 .nav__list {
     padding-left: .3%;
-    /* margin-top: 1.6%;
-    margin-left: 1.4%; */
-
 }
 
 .list__item {
@@ -1484,7 +1575,10 @@ label .check {
     width: 10px;
     text-align: center;
     border: 1px solid #ffffff;
-} 
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
 
 .check + span:after {
     content: none;
@@ -1504,6 +1598,9 @@ label .check {
 .check:checked + span,
 label > span:hover {
     color: #C283F3;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .check:checked + span:before,
@@ -1524,12 +1621,8 @@ label > span:active {
     color: #7943A4;
 }
 
-.editions__price {
-    /* margin-top: 7.5%; */
-}
-
 .price-filter__header {
-    /* margin-left: 1.2%; */
+    margin-top: 0;
     margin-bottom: 7px;
     color: #ffffff;
     font-size: 16px;
@@ -1539,7 +1632,6 @@ label > span:active {
 .filter__number {
     display: flex;
     justify-content: space-between;
-    /* margin-left: 1.7%; */
     padding: 0 3.5%;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 6px;
@@ -1578,14 +1670,9 @@ details {
 }
 
 .swiper-container2 {
-    /* position: absolute; */
     position: relative;
     width: 100%;
-    /* height: 630px; */
     padding-top: 87px;
-    /* margin-top: 1.8%; */
-    /* margin-left: auto;
-    margin-right: auto; */
     overflow: hidden;
 }
 
@@ -1617,7 +1704,6 @@ details {
 .swiper-container2>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
     top: 5.4%;
     left: 49px;
-    /* left: 4.7%; */
     color: #ffffff;
 }
 
@@ -1627,7 +1713,6 @@ details {
 }
 
 .swiper-container2>.swiper-button-next {
-    /* left: 9.2%; */
     left: 101px;
 }
 
@@ -1648,13 +1733,10 @@ details {
 
 .card__book-img {
     width: 99.4%;
-    /* width: 99.4%;
-    height: 71.8%; */
 }
 
 .card__book-name {
     display: block;
-    /* margin-top: 20px; */
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -1672,7 +1754,6 @@ details {
 
 .card__book-price {
     display: inline-block;
-    /* margin-top: 18px; */
     font-style: italic;
     font-weight: normal;
     font-size: 16px;
@@ -1681,7 +1762,6 @@ details {
 
 .card__btn {
     position: relative;
-    /* margin-top: 17px; */
     padding: 6px 20px 8px 19px;
     background-color: rgba(0, 0, 0 ,0);
     border: 2px solid #9D5CD0;
@@ -1693,6 +1773,9 @@ details {
     text-align: center;
     cursor: pointer;
     outline: none;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .card__btn::before {
@@ -1735,15 +1818,12 @@ details {
 
 .projects__heading {
     margin-bottom: 22px;
-    /* margin-left: .13%; */
 }
 
 .projects__text {
     width: 66.8%;
     padding-left: .15%;
     margin-bottom: 24px;
-    /* margin-top: 1.4%;
-    margin-left: .35%; */
     line-height: 32px;
 }
 
@@ -1764,7 +1844,10 @@ details {
     background-color: rgba(255, 255, 255);
     color: #000000;
     line-height: 15px;
-}  
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
 
 .popup {
     z-index: -1;
@@ -1849,6 +1932,7 @@ details {
 
 .projects__caption {
     /* margin-left: .2%; */
+    margin: 0;
     color: #333333;
     font-weight: 600;
     font-size: 24px;
@@ -1864,11 +1948,10 @@ details {
 .partner__img {
     cursor: pointer;
     filter: grayscale(100%);
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
-
-/* .partner__img:hover {
-    filter: grayscale(0);
-} */
 
 .one-partner {
     width: 54.6%;
@@ -1884,7 +1967,6 @@ details {
 
 .four-partner {
     width: 28%;
-    /* margin-top: 3.5%; */
 }
 
 .five-partner {
@@ -1989,16 +2071,11 @@ details {
     border-color: #9D5CD0;
 }
 
-/* .swiper-button-next:active:before,
-.swiper-button-prev:active:before {
-    border: 2px solid #000000;
-} */
-
 [class*="ground-pane"] {
     filter: grayscale(1);
 }
 
-/* Contacts */ 
+/* Contacts */
 
 .contacts__container {
     max-width: 1920px;
@@ -2010,17 +2087,14 @@ details {
 .contacts__heading {
     padding-left: 8.34%;
     margin-bottom: 1.15%;
-    /* margin-top: 2%;
-    margin-left: 8.12%; */
 }
 
 .contacts__hero {
     display: flex;
-    /* margin-top: 1.2%; */
 }
 
 .contacts__form {
-    width: 35.5%;
+    width: 35.45%;
     padding: 6.4% 0 0 8.3%;
     border: 1px solid #CACACA;
 }
@@ -2034,7 +2108,6 @@ details {
 }
 
 .contacts__adress {
-    /* margin-top: .6%; */
     margin-bottom: 5.4%;
     font-style: normal;
     font-weight: 400;
@@ -2044,19 +2117,13 @@ details {
 
 .form {
     margin-bottom: 38px;
-    /* margin-top: 2%;
-    margin-left: .05%; */
 }
 
 .form__heading {
-    /* margin: 5.6% 0 3.17% 0; */
     margin-bottom: 2.8%;
     font-weight: normal;
     font-size: 24px;
     line-height: 32px;
-}
-
-.js-validate-error-label {
 }
 
 .visually-hidden {
@@ -2076,6 +2143,28 @@ details {
     outline: none;
 }
 
+.input:hover {
+    background-color: #EAEAEA;
+}
+
+.input:focus {
+    background-color: #EAEAEA;
+}
+
+#input-name +  .js-validate-error-label {
+    position: absolute;
+    width: 184px;
+    top: -31px;
+    left: 24px;
+}
+
+#input-phone + .js-validate-error-label {
+    position: absolute;
+    width: 184px;
+    top: 32px;
+    right: 194px;
+}
+
 .form__label {
     position: relative;
     padding-left: 0;
@@ -2083,7 +2172,6 @@ details {
 
 .form__btn {
     position: relative;
-    /* margin-top: 1px; */
     padding: 2.85% 6.4%;
     border-radius: 100px;
     border: 2px solid #9D5CD0;
@@ -2094,6 +2182,9 @@ details {
     line-height: 25px;
     cursor: pointer;
     outline: none;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .form__btn:hover,
@@ -2111,7 +2202,7 @@ details {
 }
 
 .contacts__link-heading {
-    /* margin-top: 7.4%; */
+    margin-top: 0;
     margin-bottom: 2.9%;
     font-weight: normal;
     font-size: 24px;
@@ -2124,11 +2215,6 @@ details {
 
 .link-whatsapp {
     margin-right: 3%;
-    /* margin-left: .1%; */
-}
-
-.link-telegram {
-    /* margin-left: 3.1%; */
 }
 
 .contacts__icon {
@@ -2139,6 +2225,9 @@ details {
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
 .contacts__icon:hover {
@@ -2192,9 +2281,6 @@ details {
 
 .footer__logo {
     padding-top: .2%;
-    /* margin-top: 0.2%;
-    margin-left: 0.4%; */
-    /* margin-bottom: 1.5%; */
     outline: none;
 }
 
@@ -2206,8 +2292,6 @@ details {
 .social__icon {
     position: relative;
     display: inline-block;
-    height: 46px;
-    width: 46px;
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -2226,21 +2310,11 @@ details {
     outline: none;
 }
 
-/* .social__link:focus > .social__icon:before {
-    border: 2px solid #7943A4;
-} */
-
-/* .icon-vk {
-    background-image: url(../image/1920/vk.svg);
-} */
-
-/* .icon-instagram {
-    background-image: url(../image/1920/instagram.svg);
+.social__link svg path {
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
-
-.icon-facebook {
-    background-image: url(../image/1920/fb.svg);
-} */
 
 .social__link:hover svg path {
     fill: #ffffff;
@@ -2261,37 +2335,38 @@ details {
     min-width: 160px;
 }
 
-@media (max-width: 1024px) {
-
-    .centering-container {
-        width: 92%;
-    }
+@media (max-width: 1043px) {
 
     /* Header */
 
-    .header__container {
+    .header {
         display: flex;
-        justify-content: space-between;
-        padding: 2.5% 4.7%;
         background-color: #000000;
     }
 
+    .header__top .centering-container {
+        width: 100%;
+        padding-right: 0;
+    }
+
     .header__top {
-        width: 60%;
+        width: 59.2%;
         padding: 0;
+    }
+
+    .header__content-top {
+        padding: 29px 0 25px 0;
     }
 
     .header__burger {
         display: block;
         border: none;
-        height: 30px;
-        width: 34px;
-        margin-left: .5%;
-        margin-top: 1.8%;
+        width: 36px;
         background-color: rgba(0, 0, 0 ,0);
         background-image: url(../image/1024/Burger.svg);
         background-repeat: no-repeat;
         background-size: 100%;
+        background-position-y: 40%;
     }
 
     .header__nav {
@@ -2299,7 +2374,6 @@ details {
         display: block;
         z-index: 10;
         top: 0;
-        /* bottom: 0; */
         left: 0;
         right: 0;
         width: auto;
@@ -2328,11 +2402,6 @@ details {
         background-repeat: no-repeat;
     }
 
-    .header__logo {
-        margin-top: 0.5%;
-        margin-right: 2.4%;
-    }
-
     .header__list {
         flex-direction: column;
         margin-top: 2.8%;
@@ -2357,27 +2426,36 @@ details {
     }
 
     .header__img {
-        width: 108%;
+        width: 188px;
     }
 
     .header__bottom {
+        width: 40.8%;
         padding: 0;
+    }
+
+    .header__bottom .centering-container {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .header__content-bottom {
+        justify-content: flex-end;
+        padding: 35px 0 33px 0;
     }
 
     .header__nav-select {
         display: none;
     }
 
-    .header__search {
-        display: flex;
-        width: auto;
-        margin-top: 3.9%;
-        
-    }
 
     .header__search {
+        display: flex;
+        min-width: 26px;
+        justify-content: flex-end;
         width: 32px;
-        background-image: url(../image/1920/Search\ icon.svg);
+        height: 32px;
+        background-image: url(../image/1920/Searchicon.svg);
         background-repeat: no-repeat;
         background-size: 99%;
         background-color: rgba(0, 0, 0 ,0);
@@ -2386,7 +2464,7 @@ details {
 
     .search-is-active {
         width:auto;
-        height: 35px;
+        height: 32px;
         background-color: #18171B;
         background-image: none;
     }
@@ -2416,73 +2494,50 @@ details {
 
     /* Hero */
 
+    .hero__inscription {
+        padding: 114px 0 113px 0;
+    }
+
     .hero__heading {
         width: 62%;
-        margin-top: 11.9%;
-        margin-left: .3%;
+        margin-bottom: 11px;
     }
 
     .hero__text {
         width: 72%;
-        margin-left: .9%;
-        margin-top: 1%;
+        margin-bottom: 132px;
     }
 
     .hero__btn {
-        margin-left: 1%;
-        margin-top: 12.3%;
-        margin-bottom: 12.1%;
         padding: 2.3% 3.7%;
-    }
-
-    .swiper-container {
-        height: 768px;  
     }
 
     /* About */
 
-    .section-about {
-        margin-top: 8.5%;
-        padding-bottom: 5.1%;
-    }
-
-    .about__heading {
-        margin-left: .6%;
-    }
-
     .about__text {
-        width: 98%;
-        margin-top: 2.4%;
-        margin-left: .85%;
+        width: 99%;
     }
 
     /* Gallery */
 
     .section-gallery {
-        background-image: url(../image/1024/birmingham-museums-trust-MK_98NuC4-4-unsplash\ 3.jpg);
+        background-image: url(../image/1024/birmingham-museums-trust-MK_98NuC4-4-unsplash5.jpg);
     }
-
     .gallery__container {
-        padding-top: 6.5%;
+        padding-top: 8.4%;
     }
 
     .gallery__left {
-        width: 31.1%;
-        margin-left: .65%;
-    }
-
-    .gallery__heading {
-        margin-top: 7.5%;
+        width: 31.8%;
     }
 
     .gallery__filter {
         margin-top: 8.4%;
     }
 
-    
+
     .filter__heading {
-        margin-left: 1%;
-        margin-bottom: 4%;
+        margin-bottom: 4.1%;
     }
 
     .choices[data-type*=select-one]:after {
@@ -2497,103 +2552,79 @@ details {
 
     .gallery__text {
         width: 94%;
-        margin-top: 366px;
     }
 
     .gallery__right {
-        margin-left: 4.2%;
-        padding-top: 38px;
+        width: 65.8%;
+        padding-bottom: .4%;
     }
 
     .swiper-container1 {
-        width: 64%;
-        height: 78.6%;
-        padding-top: 62px;
+        padding-top: 78px;
     }
 
-    .swiper-container1 > .swiper-wrapper {
-        height: 47%;
-    }
-
-    .swiper-container1 > .swiper-wrapper > .swiper-slide {
-        max-width: 280px;
-    }
-
-    .swiper-container1 > .swiper-button-next:after, .swiper-container1 > .swiper-button-prev:after {
-        font-size: 9px;
-    }
-
-    .swiper-container1 > .swiper-button-next, .swiper-container1 > .swiper-button-prev {
+    .swiper-container1 > .swiper-button-next,
+    .swiper-container1 > .swiper-button-prev {
+        top: 40px;
         width: 30px;
         height: 30px;
     }
 
-    .swiper-container1 > .swiper-button-prev, .swiper-container1 > .swiper-container-rtl .swiper-button-next {
-        left: 1px;
+    .swiper-container1 > .swiper-button-next:after,
+    .swiper-container1 > .swiper-button-prev:after {
+        font-size: 9px;
+    }
+
+    .swiper-container1 > .swiper-button-prev,
+    .swiper-container1 > .swiper-container-rtl .swiper-button-next {
+        left: 15px;
     }
 
     .swiper-container1 > .swiper-button-next {
-        left: 16.8%;
-        right: auto;
+        left: 18.9%;
     }
 
     .swiper-container1> .swiper-pagination-fraction {
-        top: 1.4%;
-        left: 8.2%;
+        top: 3.6%;
+        left: 10.3%;
     }
 
-    /* Catalog */ 
+    /* Catalog */
 
     .catalog__container {
-        padding-top: 6.3%;
+        padding-top: 9.4%;
     }
 
-    .catalog__heading {
-        margin-left: 6px;
-
+    .catalog__top {
+        width: 70.8%;
     }
 
     .catalog__language-selection {
-        width: 46%;
+        width: 66%;
         margin-left: 4.1%;
-        transform: translateY(8px);
+        transform: translateY(7px);
     }
 
     .catalog__photo {
         width: 98.3%;
+        margin-bottom: 4.2%;
     }
 
     .catalog__text {
-        width: 98%;
-        margin-left: .8%;
-        margin-top: 1.6%;
+        width: 100%;
+        padding-top: 1%;
     }
 
-    .catalog__bottom-container {
-        margin-top: 4.1%;
-        margin-left: 1%;
-    }
-
-    .catalog__subtitle {
-        margin-top: 10.2%;
-    }
-
-    .catalog__period-life {
-        margin-top: 6%;
+    .catalog__left {
+        width: 48.1%;
     }
 
     .catalog__right {
-        width: 47%;
-        margin-left: 4.5%;
+        width: 47.3%;
     }
 
     .tab__name {
-        margin-top: 8.9%;
         margin-left: 0;
-    }
-
-    .tab__btn {
-        margin-top: 32px;
     }
 
     .tab__list {
@@ -2601,27 +2632,20 @@ details {
     }
 
     .tab__item {
-        width: 59.5%;
+        width: 65.5%;
     }
 
     .ui-accordion .ui-accordion-content {
         padding-top: 25px;
-        padding-bottom: 17px;
+        padding-bottom: 13px;
+        overflow: hidden;
     }
 
     /* Events */
 
     .events__container {
-        padding-top: 6.3%;
-        padding-bottom: 5.8%;
-    }
-
-    .events__heading {
-        margin-left: .6%;
-    }
-
-    .events__wrapper {
-        margin: 2.2% 1%;
+        padding-top: 9.5%;
+        padding-bottom: 8.7%;
     }
 
     .events__card:not(:nth-child(3n+3)) {
@@ -2630,7 +2654,6 @@ details {
 
     .events__card {
         width: 31.4%;
-        height: 684px;
     }
 
     .card__image {
@@ -2643,145 +2666,121 @@ details {
     }
 
     .card__heading {
-        width: 83%;
-        margin-top: 1%;
-        margin-left: 11.6%;    
+        padding: 4px 24px 2px 34px;
     }
 
     .card__text {
-        width: 77%;
-        margin-top: 1.3%;
-        margin-left: 11.6%;
+        padding: 0 10.8% 36.3% 11.8%;
     }
 
     .card__link {
-        bottom: 7.2%;
+        bottom: 7.4%;
         left: 12%;
         padding-bottom: 4px;
     }
 
     .events__btn {
-        left: 40%;
-        bottom: 20px;
-        padding: 1.6% 3.55%;
+        left: 39.8%;
+        bottom: 0;
+        padding: 1.6% 3.6%;
     }
 
     /* Editions */
 
     .section__editions {
-        background-image: url(../image/1024/birmingham-museums-trust-MK_98NuC4-4-unsplash\ 4.jpg);
+        background-image: url(../image/1024/birmingham-museums-trust-MK_98NuC4-4-unsplash4.jpg);
     }
 
     .editions__container {
-        padding-top: 7.9%;
+        padding-top: 8.49%;
         padding-bottom: 7.85%;
     }
 
     .editions__side-bar {
-        width: 28%;
+        width: 30%;
     }
 
     .editions__heading {
-        margin-left: 1.7%;
+        margin-bottom: 22px;
     }
 
     .editions__nav {
-        margin-top: 8.4%;
+        margin-bottom: 34px;
     }
 
     .nav__header {
-        margin-left: 2.7%;
+        margin-bottom: 7px;
     }
 
     .nav__list {
-        margin-top: 2.8%;
-        margin-left: 3.2%;
+        padding-left: 0;
     }
 
     .list__item {
-        margin-bottom: 5.46%;
+        margin-bottom: 5.05%;
     }
 
-    .editions__price {
-        margin-top: 12.7%;
-    }
-
-    .price-filter__header {
-        margin-left: 3.4%;
-    }
-    
     .filter__number {
-        width: 105%;
-        margin-left: 3.7%;
         padding: 0 3.4%
     }
 
+    .number {
+        padding: 0 10px;
+    }
+
+    .editions__hero {
+        width: 68.1%;
+    }
+
     .swiper-container2 {
-        width: 65.4%;
-        height: 510px;
-        padding-top: 65px;
-        padding-left: 40px;
-        margin-top: 2.8%;
+        padding-top: 87px;
     }
 
     .card__book-img {
         width: 100%;
-        height: 71.9%;
-    }
-
-    .card__book-name {
-        margin-top: 9%;
-    }
-
-    .card__book-price {
-        margin-top: 1%;
-    }
-
-    .card__book-writer {
-        margin-top: 13%;
     }
 
     .card__book-text {
-        padding-right: 0;
+        padding-top: 6px;
     }
 
-    .card__btn {
-        margin-top: 15px;
+    .card__book-writer {
+        margin-bottom: 12.5%;
     }
 
     .swiper-container2 > .swiper-button-prev {
-        left: 12px;
+        left: 0;
     }
 
     .swiper-container2 > .swiper-button-next, .swiper-container2 > .swiper-button-prev {
-        top: 5.3%;
+        top: 8.6%;
         height: 30px;
         width: 30px;
     }
 
     .swiper-container2>.swiper-button-next {
-        left: 17.5%;
+        left: 100px;
     }
 
     .swiper-container2>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-        top: 2%;
-        left: 9.4%;
+        top: 6%;
+        left: 7.7%;
     }
 
     /* Projects */
 
     .projects__container {
-        padding-top: 8.5%;
-    }
-
-    .projects__heading {
-        margin-left: .5%;
+        padding-top: 9.4%;
     }
 
     .projects__text {
-        width: 97%;
-        margin-top: 2.3%;
-        margin-left: .8%;
+        width: 99%;
+        padding-left: 0;
+    }
+
+    .tooltip {
+        bottom: -1px;
+        left: -3px;
     }
 
     .popup {
@@ -2809,55 +2808,51 @@ details {
         bottom: 40%;
     }
 
-    .projects__caption {
-        margin-left: 0.6%;
-    }
-
     .projects__tab {
-        padding-top: .4%;
+        padding: 2.9% 5.7%;;
     }
 
     .swiper-container3 {
-        width: 96.5%;
+        width: 100%;
         height: 128px;
     }
 
     .swiper-container3 > .swiper-button-next, .swiper-container3 > .swiper-button-prev {
-        top: 55.5%;
+        top: 54.2%;
+        height: 30px;
+        width: 30px;
     }
 
     /* Contacts */
 
     .contacts__container {
-        padding-top: 6.3%;
+        padding-top: 2.7%;
     }
 
     .contacts__heading {
-        margin-left: 4.5%;
+        padding-left: 4.85%;
+        margin-bottom: 2.1%;
     }
-
-    .contacts__hero {
-        margin-top: 2.1%;
-    }  
 
     .contacts__form {
         width: 47.6%;
-        padding: 12% 0 0 4.7%;
+        padding: 12% 0 0 4.8%;
     }
-    
+
     .contacts__adress {
-        margin-top: .7%;
+        margin-bottom: 6.3%;
     }
 
     .form__heading {
-        margin-top: 6.5%;
+        margin-top: 0;
         margin-bottom: 3.6%;
     }
 
     .input {
-        padding-top: 2.3%;
-        padding-left: 5.5%;
-        padding-bottom: 2.4%;
+        margin-bottom: 23.5px;
+        padding-top: 1.8%;
+        padding-left: 5.3%;
+        padding-bottom: 1.8%;
     }
 
     .form__btn {
@@ -2865,7 +2860,6 @@ details {
     }
 
     .contacts__link-heading {
-        margin-top: 8.7%;
         margin-bottom: 3.5%;
     }
 
@@ -2874,8 +2868,8 @@ details {
         width: 60px;
     }
 
-    .link-telegram {
-        margin-left: 6.1%;
+    .link-whatsapp {
+        margin-right: 5.9%;
     }
 
     #map {
@@ -2886,62 +2880,54 @@ details {
     /* Footer  */
 
     .footer__container {
-        padding-bottom: 3.4%;
+        padding-top: 4.2%;
+        padding-bottom: 3.7%;
     }
 
     .footer__logo {
-        margin-top: 2.7%;
-        margin-left: 1.1%;
+        padding-top: 1.2%;
     }
 
     .footer__social {
-        width: 25.6%;
-        margin-top: 1.6%;
-        margin-right: .9%;
+        width: 26.1%;
     }
 
-    .social__icon {
-        height: 62px;
+    .vk {
+        width: 61px;
+        height: 63px;
+    }
+
+    .inst {
+        width: 61px;
+        height: 63px;
+    }
+
+    .fb {
         width: 62px;
+        height: 62px;
     }
 
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 785px) {
 
     /* Header */
 
-    .header__container {
-        padding: 3.4% 6%;
+    .header__top {
+        width: 62.2%;
+        padding: 0;
     }
 
     .header__burger {
         width: 35px;
-        margin-left: 1%;
-        margin-top: 2.5%;
-    }
-
-    .header__logo {
-        margin-right: -12.6px;
     }
 
     .header__nav {
         padding: 38px 49px;
     }
 
-    .header__burger-close {
-        margin-left: 0.3%;
-        margin-top: -.1%;
-    }
-
-    .header__list {
-        margin-top: 3.8%;
-    }
-
     .header__btn-enter {
-        margin-top: 16.9%;
-        margin-left: .3%;
+
         padding: 2.6% 13.9% 2.1% 12.8%;
     }
 
@@ -2949,12 +2935,15 @@ details {
         margin-right: 3px;
     }
 
+    .header__bottom {
+        width: 37.8%;
+    }
+
     .search-is-active + .search__btn-close {
         display: block;
         width: 35px;
         height: 35px;
         margin-right: 5%;
-        margin-top: 16%;
         border-color: rgba(0, 0, 0 ,0);
         background-color: rgba(0, 0, 0 ,0);
         background-image: url(../image/1024/X.svg);
@@ -2980,58 +2969,50 @@ details {
 
     .hero__heading {
         width: 82%;
-        margin-top: 15.9%;
-        margin-left: 2%;
     }
 
     .hero__text {
-        width: 95%;
-        margin-left: 2.6%;
-        margin-top: 1.2%;
+        width: 99%;
+        margin-bottom: 132px;
     }
 
     .hero__btn {
-        margin-left: 2.7%;
-        margin-top: 16.5%;
-        padding: 3.05% 5%;
+        padding: 3.15% 5.3%;
     }
 
     /* About */
 
     .section-about {
-        margin-top: 15%;
         padding-bottom: 6.9%;
     }
 
-    .about__heading {
-        margin-left: 2.8%;
+    .about__container {
+        padding-top: 89px;
+        padding-bottom: 17px;
     }
 
     .about__text {
-        width: 94%;
-        margin-top: 3.35%;
-        margin-left: 2.9%;
+        width: 100%;
+
     }
 
     /* Gallery */
 
     .section-gallery {
-        height: 1200px;
-        background-image: url(../image/768/birmingham-museums-trust-MK_98NuC4-4-unsplash\ 3.jpg);
+        background-image: url(../image/768/birmingham-museums-trust-MK_98NuC4-4-unsplash5.jpg);
     }
 
     .gallery__container {
         display: block;
-        padding-top: 9%;
+        padding-top: 87px;
+        padding-bottom: 155px;
     }
 
     .gallery__left {
         width: 95%;
-        margin-left: 2.3%;
     }
 
     .gallery__heading {
-        margin-top: 2.5%;
         margin-bottom: 4%;
     }
 
@@ -3040,89 +3021,79 @@ details {
     }
 
     .filter__heading {
-        margin-left: .5%;
-        margin-bottom: 1.5%;
+        margin-bottom: 1.9%;
     }
 
     .choices {
-        width: 42.2%;
+        width: 44.5%
     }
-    
+
     .gallery__text {
         position: absolute;
-        top: 1034px;
-        left: 2.7%;
-        margin: 0;
+        width: 84%;
+        bottom: 70px;
+        left: 50px;
+    }
+
+    .gallery__right {
+        width: 100%;
     }
 
     .swiper-container1 {
-        top: 125%;
-        left: 2.66%;
-        width: 94.5%;
-        height: 655px;
-    }
-
-    .swiper-container1 > .swiper-wrapper > .swiper-slide {
-        max-width: 316px;
+        width: 100%;
+        padding-top: 110px;
+        padding-left: 0;
     }
 
     .swiper-container1> .swiper-pagination-fraction {
-        top: 1.3%;
+        top: 8.2%;
         left: 7.3%;
     }
-    
+
     .swiper-container1 > .swiper-button-prev,
-    .swiper-container1 > .swiper-container-rtl .swiper-button-next {
+    .swiper-container1 > .swiper-button-next {
         left: 0px;
+        top: 72px;
     }
 
     .swiper-container1 > .swiper-button-next {
         left: 15%;
     }
 
+    .gallery__paint {
+        width: 100%;
+        height: 280px;
+    }
+
     /* Catalog */
 
     .catalog__container {
-        padding-top: 5%;
+        padding-top: 13.1%;
     }
 
-    .catalog__heading {
-        margin-left: 2.2%;
+    .catalog__top {
+        width: 100%;
     }
 
     .catalog__language-selection {
-        width: 64%;
-        margin-left: 5.6%;
-        transform: translateY(2px);
-    }
-
-    .language-selection__btn:not(:first-child) {
-        margin-left: 11%;
+        width: 66.8%;
+        margin-left: 0;
+        transform: translateY(0px);
     }
 
     .catalog__text {
-        width: 95%;
-        margin-left: 2.6%;
-        margin-top: 2.1%;
+        width: 97%;
+        padding-top: 2%;
+        margin-bottom: 20px;
     }
-    
+
     .catalog__bottom-container {
         flex-direction: column-reverse;
-        margin-top: 2.8%;
-    }    
+    }
 
     .catalog__right {
-        width: 95.3%;
-        margin-left: 1.6%;
-    }
-
-    .tab__btn {
-        margin-right: -2px;
-    }
-
-    .tab__name {
-        margin-top: 5.7%;
-        margin-left: .15%;
+        width: 100%;
+        padding-bottom: 50px;
     }
 
     .tab__list {
@@ -3130,54 +3101,38 @@ details {
     }
 
     .tab__item {
-        width: 37.8%;
+        width: auto;
+        margin-right: 59px;
     }
 
     .ui-accordion .ui-accordion-content {
-        padding-left: 0;
+        padding-bottom: 14px;
     }
 
     .catalog__left {
-        width: 95.6%;
-        margin-top: 7.3%;
-        margin-left: 1.8%;
+        width: 100%;
     }
 
     .catalog__photo {
-        width: 99.9%;
-    }
-
-    .catalog__subtitle {
-        margin-top: 6.7%;
-    }
-
-    .catalog__period-life {
-        margin-top: 3.8%;
+        width: 100%;
+        margin-bottom: 2.7%;
     }
 
     .catalog__biography {
         width: 100%;
-        margin-top: 1.3%;
+        padding-left: .8px;
     }
-    
+
     /* Events */
 
     .events__container {
-        padding-top: 5.4%;
-        padding-bottom: 7.9%;
-    }
-
-    .events__heading {
-        margin-left: 2.3%;
-    }
-
-    .events__wrapper {
-        margin: 3.2% 2.7%;
+        padding-top: 11.5%;
+        padding-bottom: 8.5%;
     }
 
     .events__card {
         width: 47.4%;
-        height: 684px;
+        margin-bottom: 73px;
     }
 
     .events__card:nth-child(3) {
@@ -3205,36 +3160,36 @@ details {
     }
 
     .card__heading {
-        width: 83%;
-        margin-top: .9%;
-        margin-left: 10.8%;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 1px;
     }
 
     .card__text {
-        margin-top: .5%;
-        margin-left: 11%;
+        padding: 0px 10.8% 44% 11%;
     }
 
     .card__link {
+        bottom: 7.2%;
         left: 11%;
     }
-    
+
     .events__btn {
-        left: 36.7%;
+        left: 36%;
         bottom: 23px;
-        padding: 2.15% 4.7%;
+        padding: 2.2% 4.95%;
     }
 
     /* Editions */
 
     .section__editions {
-        background-image: url(../image/768/birmingham-museums-trust-MK_98NuC4-4-unsplash\ 4.jpg);
+        background-image: url(../image/768/birmingham-museums-trust-MK_98NuC4-4-unsplash4.jpg);
     }
 
     .editions__container {
         flex-direction: column;
-        height: 1048px;
-        padding-top: 9.4%;
+        padding-top: 11.9%;
+        padding-bottom: 5.6%;
     }
 
     .editions__side-bar {
@@ -3242,82 +3197,64 @@ details {
     }
 
     .editions__nav {
-        margin-top: 3.2%;
-    }
-
-    .editions__heading {
-        margin-left: 2.2%;
+        margin-bottom: 27px;
     }
 
     .nav__list {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        height: 144px;
-        margin-top: 1%;
-        margin-left: 2.8%;
+        height: 127px;
     }
 
     .list__item {
         margin-bottom: 2.1%;
-        margin-right: 8.4%;
+        margin-right: 9%;
     }
 
-    .editions__price {
-        margin-top: 1.5%;
+    .check + span:before {
+        top: 5px;
     }
 
     .price-filter__header {
-        margin: 0 2.7%;
+        margin-bottom: 15px;
         line-height: 16px;
     }
 
     .filter__number {
-        width: 40.5%;
-        margin-top: 2.2%;
-        margin-left: 2.8%;
+        width: 42.7%;
         padding: 0 1.4%;
     }
 
-    .swiper-container2 {
-        width: 86.5%;
-        padding-left: 6%;
-        margin-top: 5.9%;
+    .editions__hero {
+        width: 100%;
     }
 
-    .swiper-container2 > .swiper-button-prev {
-        left: 19px;
+    .swiper-container2 {
+        width: 100%;
+        padding-top: 110px;
+        padding-left: 4%;
+        padding-right: 4%;
     }
 
     .swiper-container2>.swiper-pagination-bullets,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-        top: 2.3%;
-        left: 10.5%;
+        top: 9.9%;
+        left: 7.2%;
+    }
+
+    .swiper-container2 > .swiper-button-next,
+    .swiper-container2 > .swiper-button-prev {
+        top: 12.5%;
     }
 
     .swiper-container2>.swiper-button-next {
-        left: 18.6%
+        left: 14.9%
     }
 
     .swiper-container2 > .swiper-wrapper > .swiper-slide {
         width: 63.6%;
-    }
-
-    .card__book-img {
-        height: 71.8%;
-    }
-
-    .card__book-name {
-        margin-top: 9%;
-    }
-
-    .card__book-price {
-        margin-top: .8%;
-    }
-
-    .card__book-writer {
-        margin-top: 16%;
     }
 
     .card__btn:active {
@@ -3344,17 +3281,15 @@ details {
     /* Projects */
 
     .projects__container {
-        padding-top: 11.3%;
+        padding-top: 13%;
     }
 
     .projects__heading {
-        margin-left: 2.15%;
     }
 
     .projects__text {
-        width: 93%;
-        margin-top: 3.2%;
-        margin-left: 2.6%;
+        margin-bottom: 30px;
+
     }
 
     .popup {
@@ -3383,33 +3318,31 @@ details {
     }
 
     .projects__caption {
-        margin-top: 4.2%;
-        margin-left: 2.3%;
         margin-bottom: 0;
     }
 
     .projects__tab {
-        padding: 4.7% 10.2%;
+        padding: 4.9% 8%;
     }
 
     .swiper-container3 {
         width: 100%;
         height: 106px;
     }
-    
+
     .swiper-container3 > .swiper-button-next,
     .swiper-container3 > .swiper-button-prev {
         top: 54%;
-        height: 29px;
-        width: 29px;
+        height: 30px;
+        width: 30px;
     }
 
     .swiper-container3 > .swiper-button-prev {
-        left: 2.7%;
+        left: 0;
     }
 
     .swiper-container3 > .swiper-button-next {
-        right: 2.7%;
+        right: 0;
     }
 
     .one-partner {
@@ -3423,11 +3356,11 @@ details {
     .three-partner {
         width: 82%;
     }
-    
+
     .four-partner {
         width: 38%;
     }
-    
+
     .five-partner {
         width: 52%;
     }
@@ -3447,19 +3380,24 @@ details {
     .nine-partner {
         width: 74%;
     }
-    
+
     /* Contacts*/
 
     .contacts__container {
-        padding-top: 5%;
+        padding-top: 2.8%;
     }
 
     .contacts__heading {
-        margin-left: 6%;
+        padding-left: 6.5%;
+        margin-bottom: 2.9%;
     }
 
-    .contacts__hero {
-        margin-top: 2.9%;
+    .contacts__office {
+        margin-bottom: 3px;
+    }
+
+    .contacts__adress {
+        margin-bottom: 7.3%;
     }
 
     .contacts__form {
@@ -3468,7 +3406,7 @@ details {
     }
 
     .form {
-        margin-top: 7.4%;
+        margin-bottom: 37px;
     }
 
     .form__heading {
@@ -3477,9 +3415,10 @@ details {
 
     .input {
         width: 88.3%;
-        padding-top: 2.5%;
-        padding-left: 5.9%;
-        padding-bottom: 2.8%;
+        margin-bottom: 23px;
+        padding-top: 2%;
+        padding-left: 6%;
+        padding-bottom: 2.2%;
     }
 
     .form__btn {
@@ -3487,17 +3426,11 @@ details {
     }
 
     .contacts__link-heading {
-        margin-top: 10%;
-        margin-left: -.3%;
         margin-bottom: 4%;
     }
 
     .link-whatsapp {
-        margin-left: 0;
-    }
-
-    .link-telegram {
-        margin-left: 6.9%;
+        margin-right: 6.7%;
     }
 
     #map {
@@ -3507,24 +3440,28 @@ details {
     /* Footer */
 
     .footer__container {
-        padding-top: 4.8%;
+        padding-top: 5.8%;
+        padding-bottom: 5.2%;
     }
 
     .footer__logo {
-        margin-top: 1.75%;
-        margin-left: 2.8%;
+        padding-top: 1.6%;
+        padding-left: .2%;
     }
 
     .footer__social {
-        width: 34.2%;
-        margin-top: 0.4%;
-        margin-right: 2.6%;
+        width: 36%;
+        margin-right: 0;
     }
 
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 337px) {
+
+    .centering-container {
+        padding: 0 15px;
+    }
 
     .heading {
         font-size: 28px;
@@ -3532,79 +3469,88 @@ details {
 
     /* Header */
 
-    .header__container {
-        padding: 3.4% 4%;
-        padding-bottom: 2.5%;
+    .header__top {
+        width: 65%;
+    }
+
+    .header__content-top {
+        padding-top: 12px;
+        padding-bottom: 8px;
     }
 
     .header__burger {
         width: 19px;
         height: 20px;
-    }
-
-    .header__top {
-        width: 62%;
+        background-position-y: 60%;
     }
 
     .header__logo {
-        width: 52%;
+        width: 50%;
     }
-    
+
     .header__img {
         width: 100%;
     }
 
+    .header__bottom {
+        width: 35%;
+    }
+
     .header__search {
+        min-width: 17px;
         width: 17px;
-        background-position: -1px 22%;
+        height: 23px;
+
+    }
+
+    .header__content-bottom {
+        padding-top: 12px;
+        padding-bottom: 10px;
     }
 
     /* Hero */
 
     .hero__heading {
-        width: 86%;
-        margin-top: 11.4%;
-        margin-left: 7.2%;
-        text-align: center;
+        width: 100%;
         font-size: 32px;
         line-height: 37px;
     }
 
-    .hero__text {
-        width: 93%;
-        margin-left: 4%;
-        margin-top: 4.2%;
+    .hero__inscription {
+        padding-top: 34px;
+        padding-bottom: 43px;
         text-align: center;
+    }
+
+    .hero__text {
+        width: 95%;
+        margin: 0 auto;
+        margin-bottom: 42px;
         font-size: 11px;
         line-height: 16px;
     }
 
     .hero__btn {
         padding: 1.89% 6% 2.5% 7%;
-        margin-left: 15.9%;
-        margin-top: 10.4%;
         font-size: 12px;
-    }
-
-    .swiper-container {
-        height: 355px;
     }
 
     /* About */
 
     .section-about {
-        margin-top: 16.4%;
         padding-bottom: 8.5%;
     }
 
+    .about__container {
+        padding-top: 46px;
+        padding-bottom: 14px;
+    }
+
     .about__heading {
-        margin-left: .5%;
+        margin-bottom: 4px;
     }
 
     .about__text {
-        width: 98.5%;
-        margin-top: 1.6%;
-        margin-left: 0.7%;
         font-size: 14px;
         line-height: 28px;
     }
@@ -3612,61 +3558,63 @@ details {
     /* Gallery */
 
     .section-gallery {
-        height: 962px;
-        background-image: url(../image/320/birmingham-museums-trust-MK_98NuC4-4-unsplash\ 3.jpg);
+        background-image: url(../image/320/birmingham-museums-trust-MK_98NuC4-4-unsplash5.jpg);
     }
 
     .gallery__container {
-        padding-top: 11.2%;
+        padding-top: 13.6%;
     }
 
     .gallery__left {
         width: 100%;
-        margin-left: .1%;
     }
 
     .gallery__heading {
-        margin-bottom: 2%;
+        margin-bottom: 2.5%;
+    }
+
+    .gallery__paint {
+        height: auto;
     }
 
     .filter__heading {
-        margin-top: 2.73%;
-        margin-bottom: 2.2%;
+        margin-bottom: 2.5%;
     }
 
     .choices {
-        width: 99.5%;
-        margin-left: 2px;
+        width: 100%;
+    }
+
+    .choices__inner {
+        width: 100%;
+    }
+
+    .choices[data-type*=select-one]:after {
+        right: 15px;
+        top: 46%;
+    }
+
+    .gallery__right {
+        padding-bottom: 91.9%;
     }
 
     .swiper-container1 {
-        top: 137.5%;
-        left: 0.66%;
-        height: 425px;
-        width: 98.5%;
-        padding-top: 0;
-    }
-
-    .swiper-container1 > .swiper-wrapper {
-        height: 99%;
-    }
-
-    .swiper-container1 > .swiper-wrapper > .swiper-slide {
-        max-width: 290px;
-        height: 87.4%;
+        width: 100%;
+        padding-top: 40px;
     }
 
     .swiper-container1> .swiper-pagination-fraction {
-        top: 92.7%;
-        left: 42.8%;
-    }
-
-    .swiper-button-next, .swiper-button-prev {
-        top: 96.2%;
+        top: 64.1%;
+        left: 42.5%;
     }
 
     .swiper-container1 > .swiper-button-prev,
-    .swiper-container1 > .swiper-container-rtl .swiper-button-next {
+    .swiper-container1 > .swiper-button-next {
+        left: 0px;
+        top: 449px;
+    }
+
+    .swiper-container1 > .swiper-button-prev {
         left: 80px;
     }
 
@@ -3675,24 +3623,29 @@ details {
     }
 
     .gallery__text {
-        top: 732px;
-        left: .8%;
+        width: 91%;
+        bottom: 40px;
+        left: 15px;
     }
 
     /* Catalog */
 
     .catalog__container {
-        padding-top: 20.5%;
+        padding-top: 15.2%;
     }
-    
+
+    .catalog__top {
+        flex-direction: column;
+        padding-bottom: 20px;
+        margin-bottom: 0;
+    }
+
     .catalog__heading {
-        margin-left: -1px;
-        margin-bottom: 1.8%;
+        margin-bottom: .7%;
     }
-    
+
     .catalog__language-selection {
-        width: 99%;
-        margin-left: .6%;
+        width: 99.8%;
         transform: translateY(0px);
     }
 
@@ -3700,40 +3653,32 @@ details {
         position: relative;
         height: 32px;
         width: 32px;
-        background-size: 100%;
     }
 
-    .language-selection__btn:not(:first-child) {
-        margin-left: 9.8%;
+    .language-active::after {
+        top: -6px;
+        right: -6px;
+        bottom: -6px;
+        left: -6px;
     }
 
     .catalog__text {
         display: none;
     }
 
-    .catalog__bottom-container {
-        margin-top: 6.8%;
-        margin-left: 0%;
-    }
-
-    .catalog__right {
-        width: 98.6%;
-        margin-left: 0.5%;
-    }
-
     .ui-accordion .ui-accordion-header {
-        height: 73.9px;
+        padding: 22px 0 20px 0;
     }
-    
+
     .tab__name {
         font-size: 18px;
-        margin-top: 7%;
+        line-height: 28px;
+
     }
 
     .tab__btn {
         height: 30px;
         width: 30px;
-        margin-top: 7.5%;
         margin-right: 0px;
     }
 
@@ -3751,38 +3696,32 @@ details {
     }
 
     .ui-accordion .ui-accordion-content {
-        padding-top: 17px;
-    }
-    
-    .catalog__left {
-        width: 98.6%;
-        margin-top: 17.2%;
-        margin-left: 0.8%;
-    }
-    
-    .catalog__subtitle {
-        margin-top: 11.5%;
-        margin-left: -.1%;
+        padding-top: 20px;
+        padding-bottom: 17px;
     }
 
-    .catalog__period-life {
-        margin-top: 10.8%;
+    .catalog__photo {
+        margin-bottom: 2.7%;
+    }
+
+    .catalog__subtitle {
+        margin-bottom: 5px;
     }
 
     .catalog__biography {
         width: 99%;
-        margin-top: 2.5%;
+        padding-left: 0;
     }
 
     /* Events */
 
     .events__container {
-        padding-top: 6.5%;
-        padding-bottom: 9.1%;
+        padding-top: 15.5%;
+        padding-bottom: 27.6%;
     }
 
     .events__heading {
-        margin-left: 0.1%;
+        margin-bottom: 1.2%;
     }
 
     .events__wrapper {
@@ -3795,13 +3734,13 @@ details {
 
     .swiper-container4 {
         display: block;
-        margin-left: .9%;
         overflow: hidden;
     }
 
     .events__card {
         width: 99.5%;
-        height: 684px;
+        max-height: 682px;
+        margin-bottom: 0;
     }
 
     .card__image {
@@ -3810,7 +3749,7 @@ details {
 
     .card__sign {
         margin-right: 3.5%;
-        margin-top: 4.8%;
+
     }
 
     .events__heading {
@@ -3818,20 +3757,23 @@ details {
     }
 
     .card__heading {
-        width: 85%;
-        margin-left: 9.5%;
+        padding-left: 27px;
+        padding-right: 18px;
+        padding-bottom: 36px;
+
     }
 
     .card__text {
-        width: 78%;
-        margin-top: 12.5%;
-        margin-left: 9.5%;
+        padding-left: 27px;
+        padding-right: 22px;
+        padding-bottom: 137px;
     }
 
     .card__link {
-        bottom: 7.4%;
-        left: 9.6%;
+        bottom: 7.3%;
+        left: 9.7%;
         padding-bottom: 4px;
+        padding-right: 6px;
     }
 
     .swiper-container-horizontal>.swiper-pagination-bullets,
@@ -3840,25 +3782,24 @@ details {
         bottom: 5.5%;
         left: 28.8%
     }
-    
+
     .swiper-pagination-bullet {
         width: 10px;
         height: 10px;
     }
 
     .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
-        margin: 0 7.5px;
+        margin: 0 7.3px;
     }
 
     /* Editions */
 
     .editions__container {
-        height: 1542px;
-        padding-top: 11.3%;
+        padding-top: 13.6%;
     }
 
     .editions__heading {
-        margin-left: -.3%;
+        margin-bottom: 4px;
     }
 
     .nav__header-1920 {
@@ -3869,7 +3810,7 @@ details {
         display: none;
     }
 
-    details, 
+    details,
     details summary {
         display: block;
     }
@@ -3901,25 +3842,23 @@ details {
     }
 
     .editions__nav {
-        margin-top: 1.7%;
+        margin-bottom: 26px;
     }
 
     .nav__header {
-        padding-left: .4%;
         padding-top: .7%;
-        padding-bottom: 1.3%;
         padding-bottom: 1.5%;
-        margin-left: 0;
+        margin: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.5);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .editions__side-bar {
-        width: 99%;
+        width: 100%;
     }
 
     .list__item {
-        padding: 3.6% 14% 3.2% .9%;
+        padding: 3.4% 14% 3.4% 0;
         margin-bottom: 0;
         margin-right: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -3930,69 +3869,57 @@ details {
     }
 
     .editions__price {
-        margin-top: 8.8%;
-    }
-
-    .price-filter__header {
-        margin: 0 .4%;
+        margin-bottom: 50px;
     }
 
     .filter__number {
         width: 96%;
-        margin-top: 5.4%;
-        margin-left: .6%;
         padding: 0 3.2%;
     }
 
     .number {
-        padding: 3.8% .8% 3.6% 3.8%;
+        padding: 3% 3.9% 3% 3.2%;
     }
 
     .swiper-container2 {
-        width: 93.6%;
-        height: 1200px;
-        margin-left: -2%;
-        margin-top: 15.8%;
-        padding-top: 0;
-        padding-left: 9px;
-    }    
+        padding: 0;
+    }
 
     .swiper-container2 > .swiper-wrapper > .swiper-slide {
-        height: 25.34%;
-    }    
+        margin-bottom: 50px;
+    }
 
-
-    .card__book-img {
-        height: 47.1%;
+    .card__book-text {
+        padding-top: 5px;
     }
 
     .card__book-name {
-        width: 130px;
-        margin-top: 3.5%;
         font-size: 12px;
+        line-height: 18px;
     }
 
-    .card__book-price {
-        width: 122px;
+    .card__book-writer {
+        margin-bottom: 24.1%;
         font-size: 12px;
         line-height: 12px;
     }
 
-    .card__book-writer {
+    .card__book-price {
         position: absolute;
-        bottom: 32.3%;
+        bottom: 19%;
         left: 0;
+        margin: 0;
         font-size: 12px;
     }
 
     .card__btn {
-        margin-top: 31.5px;
         padding: 6.7px 34px;
         font-size: 12px;
     }
 
-    .card__book-price,
+    .card__book-writer,
     .card__book-name {
+        width: 132px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -4001,33 +3928,30 @@ details {
     /* Projects */
 
     .projects__container {
-        padding-top: 13.5%;
+        padding-top: 15.4%;
     }
 
     .projects__heading {
-        margin-left: -.3%;
+        margin-bottom: 4px;
     }
 
     .projects__text {
-        width: 99%;
-        margin-top: 1.7%;
-        margin-left: 0.4%;
+        width: 100%;
+        margin-bottom: 14px;
     }
 
     .projects__caption {
-        margin-top: 4.8%;
-        margin-left: .4%;
         margin-bottom: 1.5%;
         font-size: 18px;
     }
 
     .swiper-container3 {
-        width: 84.3%;
+        width: 100%;
         height: 65px;
     }
 
     .projects__tab {
-        padding: 3.5% 10%;
+        padding: 3.5% 16.2%;
     }
 
     .one-partner {
@@ -4039,23 +3963,17 @@ details {
         top: 58%;
     }
 
-    .swiper-container3 > .swiper-button-prev {
-        left: 1%;
-    }
-
-    .swiper-container3 > .swiper-button-next {
-        right: 1%;
-    }
-
     /* Contacts */
 
     .contacts__container {
+        padding-top: .2%;
         padding-bottom: 8.5%;
     }
 
     .contacts__heading {
-        margin-left: 4.1%;
-        margin-top: 5.4%;
+        padding-left: 4.7%;
+        margin-bottom: 0;
+
     }
 
     .contacts__hero {
@@ -4067,50 +3985,45 @@ details {
     .contacts__form {
         border: none;
         width: 100%;
-        padding: 2.6% 0 0 4%;
+        padding: 2.2% 0 0 4.7%;
     }
 
     .contacts__office {
+        margin-bottom: 1px;
         font-size: 18px;
         line-height: 18px;
-    } 
-    
+    }
+
     .contacts__adress {
-        margin-top: 0;
+        margin-bottom: 116.2%;
         font-size: 14px;
         line-height: 22px;
     }
 
     .form {
-        margin-top: 354px;
+        margin-bottom: 20px;
     }
 
     .form__heading {
-        margin-left: 0.3%;
         margin-bottom: 5.5%;
         font-size: 18px;
     }
 
     .input {
-        width: 94.6%;
-        margin-left: .6%;
+        width: 95%;
         margin-bottom: 20px;
-        padding-top: 3.5%;
+        padding-top: 2.5%;
         padding-left: 7.6%;
-        padding-bottom: 3%;
+        padding-bottom: 2.8%;
     }
 
     .form__btn {
-        padding: 1.9% 10.8%;
-        margin-left: .8%;
-        margin-top: -.02%;
+        padding: 1.85% 10.8%;
         font-size: 12px;
     }
 
     .contacts__link-heading {
-        margin-top: 6.6%;
-        margin-left: .3%;
-        margin-bottom: 2%;
+        margin-bottom: 2.2%;
         font-size: 18px;
     }
 
@@ -4120,11 +4033,7 @@ details {
     }
 
     .link-whatsapp {
-        margin-left: .6%;
-    }
-
-    .link-telegram {
-        margin-left: 5.2%;
+        margin-right: 5.3%;
     }
 
     #map {
@@ -4137,28 +4046,37 @@ details {
     /* Footer */
 
     .footer__container {
-        padding-bottom: 5.2%;
+        padding-bottom: 5.9%;
+        text-align: center;
         flex-direction: column-reverse;
     }
 
     .footer__logo {
-        margin-top: 5.75%;
-        margin-left: 33.8%;
+        padding-top: 4.6%;
     }
 
     .footer__img {
-        width: 49.8%;
+        width: 33.1%;
     }
 
     .footer__social {
-        width: 71.2%;
-        margin-top: 1.5%;
-        margin-left: 14.5%;
+        width: 72.6%;
+        margin: 1% auto;
     }
 
-    .social__icon {
-        height: 50.5px;
-        width: 50.5px;
+    .vk {
+        width: 51px;
+        height: 51px;
     }
-    
+
+    .inst {
+        width: 51px;
+        height: 51px;
+    }
+
+    .fb {
+        width: 51px;
+        height: 51px;
+    }
+
 }

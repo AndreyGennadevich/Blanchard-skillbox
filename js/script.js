@@ -1,29 +1,34 @@
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-one').addEventListener('click', function() {
+        document.querySelector('#btn-one').classList.toggle('btn-content-active')
         document.querySelector('#testscroll').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-two').addEventListener('click', function() {
+        document.querySelector('#btn-two').classList.toggle('btn-content-active')
         document.querySelector('#testscroll1').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-three').addEventListener('click', function() {
+        document.querySelector('#btn-three').classList.toggle('btn-content-active')
         document.querySelector('#testscroll2').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-four').addEventListener('click', function() {
+        document.querySelector('#btn-four').classList.toggle('btn-content-active')
         document.querySelector('#testscroll3').classList.toggle('tab-content-active')
     })
 });
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#btn-five').addEventListener('click', function() {
+        document.querySelector('#btn-five').classList.toggle('btn-content-active')
         document.querySelector('#testscroll4').classList.toggle('tab-content-active')
     })
 });
@@ -31,7 +36,7 @@ window.addEventListener('DOMContentLoaded', function() {
 new SimpleBar(document.getElementById('testscroll'), {
     scrollbarMinSize: 25,
     scrollbarMaxSize: 30,
-    forceVisible: true,
+    // forceVisible: true,
 });
 
 new SimpleBar(document.getElementById('testscroll1'), {
@@ -69,11 +74,11 @@ const element = document.querySelector('#selectCustom')
         });
 
 const swiper = new Swiper('.swiper-container', {
-    
+
     loop: true,
     autoplay: {
     delay: 8000,
-    disableOnInteraction: false,        
+    disableOnInteraction: false,
     },
     speed: 800,
 });
@@ -81,10 +86,10 @@ const swiper = new Swiper('.swiper-container', {
 var swiper1 = new Swiper('.swiper-container1', {
     slidesPerView: 1,
     slidesPerColumn: 1,
-    spaceBetween: 52,
     slidesPerGroup: 1,
-    breakpoints: { 321: { slidesPerColumn: 2, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 34 },
-                    1025: { slidesPerColumn: 2, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50 },
+    breakpoints: { 338: { slidesPerColumn: 2, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 34},
+                    786: { slidesPerColumn: 2, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 36 },
+                    1043: { slidesPerColumn: 2, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50 },
                     },
     slidesPerColumnFill: 'row',
     pagination: {
@@ -118,7 +123,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#german').addEventListener('click', function() {
-        
+
         document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
             tabContent.classList.remove('language-active')
         })
@@ -129,7 +134,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#italy').addEventListener('click', function() {
-        
+
         document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
             tabContent.classList.remove('language-active')
         })
@@ -140,7 +145,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#russian').addEventListener('click', function() {
-        
+
         document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
             tabContent.classList.remove('language-active')
         })
@@ -151,7 +156,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#belgium').addEventListener('click', function() {
-        
+
         document.querySelectorAll('.language-selection__btn').forEach(function(tabContent) {
             tabContent.classList.remove('language-active')
         })
@@ -219,10 +224,9 @@ var swiper2 = new Swiper('.swiper-container2', {
     spaceBetween: 30,
     watchOverflow: true,
     slidesPerColumnFill: 'row',
-    breakpoints: { 321: { spaceBetween: 35, slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2 },
-                    769: { spaceBetween: 51 },
-                    1025: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50},
-                    
+    breakpoints: { 338: { spaceBetween: 35, slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2 },
+                    786: {  slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 50},
+                    1043: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50},
                     },
     pagination: {
         el: '.swiper-pagination',
@@ -240,9 +244,9 @@ var swiper3 = new Swiper('.swiper-container3', {
     slidesPerColumn: 1,
     spaceBetween: 33,
     slidesPerGroup: 1,
-    breakpoints: {  321: { slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2 },
-                    769: { slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 50 },
-                    1025: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50},
+    breakpoints: {  338: { slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2 },
+                    786: { slidesPerColumn: 1, slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 50 },
+                    1043: { slidesPerColumn: 1, slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 50},
                 },
     navigation: {
         nextEl: '.swiper-button-next',
@@ -304,7 +308,7 @@ ymaps.ready(init);
                     required: true,
                     function: (name, value) => {
                         const phone = selector.inputmask.unmaskedvalue()
-                        return Number(phone) && phone.length === 10                      
+                        return Number(phone) && phone.length === 10
                     },
                 },
             },
@@ -333,7 +337,7 @@ ymaps.ready(init);
 });
 
 $(document).ready(function(){
-    $("#btn-subscribe").on("click", function (event) {
+    $(".link").on("click", function (event) {
         //отменяем стандартную обработку нажатия по ссылке
         event.preventDefault();
         //забираем идентификатор бока с атрибута href
@@ -345,18 +349,6 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $(".header__link").on("click", function (event) {
-        //отменяем стандартную обработку нажатия по ссылке
-        event.preventDefault();
-        //забираем идентификатор бока с атрибута href
-        var id  = $(this).attr('href'),
-        //узнаем высоту от начала страницы до блока на который ссылается якорь
-            top = $(id).offset().top;
-        //анимируем переход на расстояние - top за 1500 мс
-        $('body,html').animate({scrollTop: top}, 1500);
-    });
-});
 
 window.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#header__search').addEventListener('click', function() {
@@ -386,6 +378,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 var swiper4 = new Swiper('.swiper-container4', {
     spaceBetween: 50,
+    autoHeight: false,
     pagination: {
         el: ".swiper-pagination",
     },
