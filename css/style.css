@@ -67,6 +67,7 @@ ul {
     width: 100%;
     margin: 0 auto;
     padding: 0 50px;
+    overflow: hidden;
 }
 
 .heading {
@@ -499,6 +500,7 @@ button, input, optgroup, select, textarea {
 
 .section-hero {
     position: relative;
+    overflow: hidden;
 }
 
 .swiper-container {
@@ -635,6 +637,7 @@ button, input, optgroup, select, textarea {
     background-image: url(../image/1920/background.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    overflow: hidden;
 }
 
 .gallery__heading {
@@ -2770,6 +2773,7 @@ details {
     /* Projects */
 
     .projects__container {
+        overflow: hidden;
         padding-top: 9.4%;
     }
 
@@ -3187,6 +3191,7 @@ details {
     }
 
     .editions__container {
+        overflow: hidden;
         flex-direction: column;
         padding-top: 11.9%;
         padding-bottom: 5.6%;
@@ -3779,7 +3784,6 @@ details {
     .swiper-container-horizontal>.swiper-pagination-bullets,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-        bottom: 5.5%;
         left: 28.8%
     }
 
